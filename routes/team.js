@@ -6,9 +6,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 router.post('/create', authMiddleware, async (req, res) => {
   const { name } = req.body;
-  console.log(name);
   const userId = req.userId;
-  console.log(userId);
   const team = await Team.create({ name, members: [userId], createdBy: userId });
 
   await User.findByIdAndUpdate(userId, { $push: { teams: team._id } });

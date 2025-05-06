@@ -1,8 +1,11 @@
 const jwt = require('jsonwebtoken');
+const blacklist = require('../utils/tokenBlackList');
 
 const authMiddleware = (req, res, next) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');
   if (!token) return res.status(401).json({ message: 'No token provided' });
+  
+  if (blacklist.has(token)) return res.status(401).json({ message: 'Token has been logged out' });
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);

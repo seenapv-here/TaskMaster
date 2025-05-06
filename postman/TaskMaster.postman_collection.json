@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "a6977097-b318-49c9-bafd-3f47b274cd8e",
+		"name": "TaskMaster",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40247747"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser4\",\r\n    \"password\": \"testpassword2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"testpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg5YmY5MWEzOGU1NDQ4YzgxZWI4MyIsImlhdCI6MTc0NjQ0NDI5NSwiZXhwIjoxNzQ2NTMwNjk1fQ.K15qp8MRWOn2FfKg37Yxq0ew64rICMk-dGNx5HnY6bA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"testpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODE2YzJmZDYwNmRlMmY0NmVkZTUzOCIsImlhdCI6MTczNjU2MzA3OCwiZXhwIjoxNzM2NTY2Njc4fQ.X__aWl_PbNvWf7dA_9EyK5LzMKHlpEE16t0PJ2tabuI",
+						"description": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODE2YzJmZDYwNmRlMmY0NmVkZTUzOCIsImlhdCI6MTczNjUzNTkyMCwiZXhwIjoxNzM2NTM5NTIwfQ.XrEviSlWYLVrPVdgpW3PJcaladeHxh5dwxMG62kVcFs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg5YmY5MWEzOGU1NDQ4YzgxZWI4MyIsImlhdCI6MTc0NjQ0MzM4MywiZXhwIjoxNzQ2NTI5NzgzfQ.RF0fqjdRLraRrkdzvJYEioSBw5nMWTeLJVGf_Q33xog",
+						"description": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated User\",\r\n  \"email\": \"test@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/681868052075ec088ecb4f5c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"681868052075ec088ecb4f5c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser4\",\r\n    \"password\": \"testpassword2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQ0MDk5OSwiZXhwIjoxNzQ2NTI3Mzk5fQ.Of_DtVVHJGz47Qe1bWQYX7QERP0UETc6DrgeK05bN6M",
+						"description": "test",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks?status=open&search=meeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "open"
+						},
+						{
+							"key": "search",
+							"value": "meeting"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Tasks Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQ0MDk5OSwiZXhwIjoxNzQ2NTI3Mzk5fQ.Of_DtVVHJGz47Qe1bWQYX7QERP0UETc6DrgeK05bN6M",
+						"description": "test",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks?status=open&search=meeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "open"
+						},
+						{
+							"key": "search",
+							"value": "meeting"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Task Completed",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQ0MDk5OSwiZXhwIjoxNzQ2NTI3Mzk5fQ.Of_DtVVHJGz47Qe1bWQYX7QERP0UETc6DrgeK05bN6M",
+						"description": "test",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/681869b9d9eb66f7dc9a874d/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"681869b9d9eb66f7dc9a874d",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQ0MDk5OSwiZXhwIjoxNzQ2NTI3Mzk5fQ.Of_DtVVHJGz47Qe1bWQYX7QERP0UETc6DrgeK05bN6M",
+						"description": "test",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"68189bf91a38e5448c81eb83\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/6818af68b0100e6d905364aa/assign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"6818af68b0100e6d905364aa",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQzMDA5OCwiZXhwIjoxNzQ2NTE2NDk4fQ.dQTBmFsn4aifqEi7YhOcSo_ogz-nnLka-aCvgtwyz-Y",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "\"Here's a comment\"",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": "/C:/BEL/taskmaster-backend/Comment1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/comments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODE2YzJmZDYwNmRlMmY0NmVkZTUzOCIsImlhdCI6MTczNjU2MzA3OCwiZXhwIjoxNzM2NTY2Njc4fQ.X__aWl_PbNvWf7dA_9EyK5LzMKHlpEE16t0PJ2tabuI",
+						"description": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODE2YzJmZDYwNmRlMmY0NmVkZTUzOCIsImlhdCI6MTczNjUzNTkyMCwiZXhwIjoxNzM2NTM5NTIwfQ.XrEviSlWYLVrPVdgpW3PJcaladeHxh5dwxMG62kVcFs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create team",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQ0MTc2NSwiZXhwIjoxNzQ2NTI4MTY1fQ.GOxp2mUxV3toGzQaCvGCMOFaYVBqQ_D0N6YzhmQEHVE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser4\",\r\n    \"password\": \"testpassword2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/teams/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"teams",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test AI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTg2ODA1MjA3NWVjMDg4ZWNiNGY1YyIsImlhdCI6MTc0NjQ0MTc2NSwiZXhwIjoxNzQ2NTI4MTY1fQ.GOxp2mUxV3toGzQaCvGCMOFaYVBqQ_D0N6YzhmQEHVE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser4\",\r\n    \"password\": \"testpassword2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/generate-description",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"generate-description"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
